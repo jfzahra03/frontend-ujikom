@@ -1,21 +1,17 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-import Produk from "../views/Produk.vue";
+import Product from "../views/Product.vue";
 import SingleProduct from "../views/SingleProduct.vue";
 import Banner from "../views/Banner.vue";
 import Kontak from "../views/Kontak.vue";
 import Checkout from "../views/Checkout.vue";
 import Chard from "../views/Chard.vue";
+import Login from "../views/Login.vue";
+import Dashboard from "../views/Dashboard.vue";
+import Create from "../views/Create.vue";
 import store from "../store";
 
 const routes = [
-    {
-        path: "/login",
-        name: "Login",
-        component: Login,
-        meta: { requiresGuest: true},
-    },
     {
         path: "/register",
         name: "Register",
@@ -23,8 +19,8 @@ const routes = [
     },
     {
       path: "/produk",
-      name: "Produk",
-      component: Produk,
+      name: "Product",
+      component: Product,
   },
   {
     path: "/",
@@ -32,7 +28,7 @@ const routes = [
     component: Banner,
   },
   {
-  path: "/singleproduct",
+  path: "/singleproduct/:id",
   name: "SingleProduct",
   component: SingleProduct,
   },
@@ -51,6 +47,27 @@ const routes = [
         name: "Chard",
         component: Chard,
         },
+        {
+          path: "/dashboard",
+          name: "Dashboard",
+          component: Dashboard,
+          },
+          {
+            path: "/create",
+            name: Create,
+            component: Create,
+          },
+          // {
+          //   path: "/todo",
+          //   name: TodoItem,
+          //   component: TodoItem,
+          // },
+        {
+        path: "/login",
+        name: "Login",
+        component: Login,
+        meta: { requiresGuest: true},
+          },
 ];
 
 const router = createRouter({
